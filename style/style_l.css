@@ -1,0 +1,118 @@
+/* Estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url(../assets/img/drum2.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: "Jura", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+span{
+  text-align: center;
+  .reg{
+    text-decoration: none;
+    color: #7ba4ee;
+  }
+}
+/* Formulario cristal */
+.glass-form {
+  width: 320px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Títulos y etiquetas */
+.glass-form h2 {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.glass-form label {
+  font-size: 14px;
+}
+
+/* Inputs */
+.glass-form input {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 16px;
+}
+
+.glass-form input::placeholder {
+  color: #ddd;
+}
+
+/* Botón ingresar con animación fondo */
+.glass-form button[type="submit"] {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(270deg, #d89925, #da0700, #d89925);
+  background-size: 600% 600%;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-position 2.5s ease-in-out;
+  background-position: 100% 0;
+}
+
+.glass-form button[type="submit"]:hover {
+  animation: moveBg 2s ease-in-out infinite;
+}
+
+@keyframes moveBg {
+  0% {
+    background-position: 100% 0;
+  }
+  50% {
+    background-position: 0% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+.btn-regresar {
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #337aff;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-regresar:hover {
+  background-color: #194391;
+}
