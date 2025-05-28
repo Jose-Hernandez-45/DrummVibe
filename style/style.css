@@ -70,23 +70,26 @@ header {
 
 .info{
   background-color: #555;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
+  gap: 1rem;
+  justify-content: space-around;
+  text-align: center;
   color: #fff;
   font-family: "Jura", sans-serif;
-  justify-content: space-around;
+  
 }
 
 .info_c{
-  padding: 7px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  padding: 5px;
+  margin: 10px;
   background-color: #790501;
   border-radius: 5px;
   border: 1px solid black;
-  align-items: center;
-  text-align: center;
 }
-
+.info_c:hover {
+  transform: scale(1.03);
+}
 .guia{
   height: 200px;
   width: 260px;
@@ -99,17 +102,12 @@ header {
 }
 .guia3{
   height: 200px;
-  width: 310px;
+  width: 290px;
   border-radius: 5px;
 }
 @media (max-width: 1024px) {
   #heroCarousel {
     height: 400px;
-  }
-}
-@media (max-width: 768px) {
-  #heroCarousel {
-    height: 300px;
   }
 }
 
@@ -132,9 +130,16 @@ header {
         transition: max-height 0.7s ease;
         z-index: 9999;
     }
-
+    .title_h {
+      font-family: "Jura", sans-serif;
+      font-weight: 1000;
+      font-size: 1.3rem;
+    }
+    #heroCarousel {
+      height: 300px;
+    }
     .menu.show {
-        max-height: 500px; /* suficiente para mostrar todo el menú */
+        max-height: 500px;
     }
 
     .menu a {
