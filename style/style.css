@@ -86,6 +86,7 @@ header {
   background-color: #790501;
   border-radius: 5px;
   border: 1px solid black;
+  box-shadow: 10px 10px 10px  #ff3b34;
 }
 .info_c:hover {
   transform: scale(1.03);
@@ -158,17 +159,17 @@ header {
     }
     .guia{
       height: 100px;
-      width: 110px;
+      width: 100%;
       border-radius: 5px;
     }
     .guia2{
       height: 100px;
-      width: 140px;
+      width: 100%;
       border-radius: 5px;
     }
     .guia3{
       height: 100px;
-      width: 160px;
+      width: 100%;
       border-radius: 5px;
     }
 }
