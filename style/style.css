@@ -69,7 +69,11 @@ header {
 }
 
 .info{
-  background-color: #555;
+  background-image: url(../assets/img/img2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   display: grid;
   grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
   gap: 1rem;
@@ -77,16 +81,18 @@ header {
   text-align: center;
   color: #fff;
   font-family: "Jura", sans-serif;
-  
+  border-top: 3px solid #da0700;
+  border-bottom: 3px solid #da0700;
+  padding-bottom: 10px;
+  padding-top: 10px;
 }
 
 .info_c{
   padding: 5px;
   margin: 10px;
   background-color: #790501;
-  border-radius: 5px;
-  border: 1px solid black;
-  box-shadow: 10px 10px 10px  #ff3b34;
+  border-radius: 10px;
+  border: 3px solid #ff3b34;
 }
 .info_c:hover {
   transform: scale(1.03);

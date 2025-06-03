@@ -14,21 +14,24 @@
 </head>
 <body>
     <form action="/login" method="POST" class="glass-form">
-        <h2>Iniciar Sesión</h2>
+        <h2>Registro</h2>
 
-        <label for="usuario">Usuario:</label>
+        <label for="usuario">Nombre de usuario:</label>
         <input type="text" id="usuario" name="usuario" required>
 
-        <label for="contrasena">Contraseña</label>
+        <label for="contrasena">Correo</label>
+        <input type="email" id="correo" name="correo" required>
+
+        <label for="contrasena">Crea una contraseña</label>
         <div style="position: relative;">
             <input type="password" id="contrasena" name="contrasena" required style="padding-right: 30px;">
             <i id="togglePassword" class="fa-solid fa-eye" 
             style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;"></i>
         </div>
+        </div>
 
-        <button type="submit">Ingresar</button>
-        <button type="button" onclick="window.location.href='../index.html'" class="btn-regresar">Volver al inicio</button>
-        <span>¿No tienes cuenta? <a href="./registro.html" class="reg">Registrate</a></span>
+        <button type="submit">Registrate</button>
+        <span>¿Ya tienes cuenta? <a href="./login.html" class="reg">Incia sesión</a></span>
     </form>
     <script src="../assets/main.js"></script>
 </body>
