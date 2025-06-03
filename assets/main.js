@@ -1,25 +1,15 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const toggle = document.getElementById("menu-toggle");
-    const menu = document.getElementById("menu");
+const togglePassword = document.getElementById('togglePassword');
+  const passwordInput = document.getElementById('contrasena');
 
-    if (toggle && menu) {
-        toggle.addEventListener("click", function () {
-            menu.classList.toggle("show");
-        });
-    }
+  togglePassword.addEventListener('click', () => {
+    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+    passwordInput.setAttribute('type', type);
+    
+    // Cambiar icono
+    togglePassword.classList.toggle('fa-eye');
+    togglePassword.classList.toggle('fa-eye-slash');
+  });
 
-    const togglePassword = document.getElementById("togglePassword");
-    const passwordInput = document.getElementById("contrasena");
-
-    if (togglePassword && passwordInput) {
-        togglePassword.addEventListener("click", () => {
-            const isPassword = passwordInput.type === "password";
-            passwordInput.type = isPassword ? "text" : "password";
-            togglePassword.classList.toggle("fa-eye");
-            togglePassword.classList.toggle("fa-eye-slash");
-        });
-    }
-});
 
 window.addEventListener("load", () => {
     const loader = document.getElementById("loader");
