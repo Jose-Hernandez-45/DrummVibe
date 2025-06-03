@@ -1,24 +1,29 @@
-const togglePassword = document.getElementById('togglePassword');
-  const passwordInput = document.getElementById('contrasena');
 
-  togglePassword.addEventListener('click', () => {
-    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-    passwordInput.setAttribute('type', type);
-    
-    // Cambiar icono
-    togglePassword.classList.toggle('fa-eye');
-    togglePassword.classList.toggle('fa-eye-slash');
-  });
+document.addEventListener('DOMContentLoaded', () => {
+  const menuToggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('menu');
 
+  if(menuToggle && menu) {
+    menuToggle.addEventListener('click', () => {
+      menu.classList.toggle('show');
+    });
+  }
+});
 
 window.addEventListener("load", () => {
-    const loader = document.getElementById("loader");
-    if (loader) {
-        loader.style.transition = "opacity 0.5s ease";
-        loader.style.opacity = "0";
-        loader.style.pointerEvents = "none";
-        setTimeout(() => {
-            loader.style.display = "none";
-        }, 500);
-    }
+  console.log("Página cargada, ocultando loader...");
+  const loader = document.getElementById("loader");
+  if (loader) {
+    console.log("Loader encontrado:", loader);
+    loader.style.transition = "opacity 0.5s ease";
+    loader.style.opacity = "0";
+    loader.style.pointerEvents = "none";
+    setTimeout(() => {
+      loader.style.display = "none";
+      console.log("Loader ocultado.");
+    }, 500);
+  } else {
+    console.log("Loader NO encontrado.");
+  }
 });
+

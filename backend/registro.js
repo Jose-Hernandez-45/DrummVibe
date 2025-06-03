@@ -1,54 +1,58 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const togglePassword = document.querySelector('#togglePassword');
-    const passwordInput = document.querySelector('#contrasena');
+    const togglePassword = document.getElementById('togglePassword');
+    const passwordInput = document.getElementById('contrasena');
     const form = document.getElementById('registroForm');
     const message = document.getElementById('message');
 
-    togglePassword.addEventListener('click', () => {
-        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-        passwordInput.setAttribute('type', type);
-        togglePassword.classList.toggle('fa-eye-slash');
-    });
+    if (togglePassword && passwordInput) {
+        togglePassword.addEventListener('click', () => {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
 
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
+            // Alterna las clases de FontAwesome para cambiar el icono
+            togglePassword.classList.toggle('fa-eye');
+            togglePassword.classList.toggle('fa-eye-slash');
+        });
+    }
 
-        const usuario = document.getElementById('usuario').value.trim();
-        const correo = document.getElementById('correo').value.trim();
-        const contrasena = document.getElementById('contrasena').value;
+    if (form) {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
 
-        if (!usuario || !correo || !contrasena) {
-            message.textContent = 'Por favor, completa todos los campos.';
-            message.style.color = '#da0700';
-            return;
-        }
+            const usuario = document.getElementById('usuario').value.trim();
+            const correo = document.getElementById('correo').value.trim();
+            const contrasena = passwordInput.value;
 
-        try {
-            const res = await fetch('http://localhost:5000/register', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ usuario, correo, contrasena }),
-            });
-
-            const data = await res.json();
-
-            if (!res.ok) {
-                message.textContent = data.error || 'Error en el registro';
+            if (!usuario || !correo || !contrasena) {
+                message.textContent = 'Por favor, completa todos los campos.';
                 message.style.color = '#da0700';
                 return;
             }
 
-            message.textContent = data.message;
-            message.style.color = '#49cc21';
+            try {
+                const res = await fetch('http://localhost:5000/register', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ usuario, correo, contrasena }),
+                });
 
-            form.reset();
+                const data = await res.json();
 
-        } catch (error) {
-            message.textContent = 'Error en la conexión con el servidor';
-            message.style.color = '#da0700';
-            console.error(error);
-        }
-    });
+                if (!res.ok) {
+                    message.textContent = data.error || 'Error en el registro';
+                    message.style.color = '#da0700';
+                    return;
+                }
+
+                message.textContent = data.message;
+                message.style.color = '#49cc21';
+                form.reset();
+
+            } catch (error) {
+                message.textContent = 'Error en la conexión con el servidor';
+                message.style.color = '#da0700';
+                console.error(error);
+            }
+        });
+    }
 });
