@@ -1,4 +1,4 @@
-
+// Menú hamburguesa en index
 document.addEventListener('DOMContentLoaded', () => {
   const menuToggle = document.getElementById('menu-toggle');
   const menu = document.getElementById('menu');
@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+
+// Loader en index
 window.addEventListener("load", () => {
   console.log("Página cargada, ocultando loader...");
   const loader = document.getElementById("loader");

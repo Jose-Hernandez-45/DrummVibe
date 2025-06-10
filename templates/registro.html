@@ -10,20 +10,23 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style/style_l.css">
-    <link rel="stylesheet" href="./assets/img/logo.jpg">
+    <link rel="icon" href="../assets/img/logo.jpg">
     <meta type=author name="Jose Miguel Hernandez Galindo">
 </head>
 <body>
+    <div id="loader">
+        <img src="../assets/img/logo.jpg" alt="Logo DrumVibe" />
+    </div>
     <form id="registroForm" class="glass-form">
         <h2>Registro</h2>
         <div id="message" style="margin-top: 5px;"></div>
         <label for="usuario">Nombre de usuario:</label>
         <input type="text" id="usuario" name="usuario" required />
 
-        <label for="correo">Correo</label>
+        <label for="correo">Correo:</label>
         <input type="email" id="correo" name="correo" required />
 
-        <label for="contrasena">Crea una contraseña</label>
+        <label for="contrasena">Crea una contraseña:</label>
         <div class="password-container">
             <input type="password" id="contrasena" name="contrasena" required />
             <i id="togglePassword" class="fa-solid fa-eye"></i>
