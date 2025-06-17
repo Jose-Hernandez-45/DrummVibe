@@ -119,7 +119,7 @@ header {
   text-align: center;
   color: #fff;
   font-family: "Jura", sans-serif;
-  border-top: 3px solid #da0700;
+  border-top: 3px solid #312b2b;
   border-bottom: 3px solid #da0700;
   padding-bottom: 10px;
   padding-top: 10px;
@@ -128,10 +128,10 @@ header {
   font-weight: 500;
   font-size: 45px;
   text-shadow:
-    -1px -1px 0 #000,
-     1px -1px 0 #000,
-    -1px  1px 0 #000,
-     1px  1px 0 #000;
+    -1px -1px 0 #ff0000,
+     1px -1px 0 #ff0000,
+    -1px  1px 0 #ff0000,
+     1px  1px 0 #ff0000;
 }
 .info_c{
   padding: 5px;
@@ -139,9 +139,10 @@ header {
   background-color: #790501;
   border-radius: 10px;
   border: 3px solid #ff3b34;
+  transition: transform 0.3s ease;
 }
 .info_c:hover {
-  transform: scale(1.03);
+  transform: translateY(-5px);
 }
 .guia{
   height: 200px;
@@ -162,21 +163,143 @@ header {
   text-align: center;
   font-family: "Jura", sans-serif;
   background-color: #471412;
-  color:#fff;
   margin: 0;
   padding: 0;
 }
+.ejer h2{
+  padding-top: 20px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 45px;
+  text-shadow:
+    -1px -1px 0 #ff0000,
+     1px -1px 0 #ff0000,
+    -1px  1px 0 #ff0000,
+     1px  1px 0 #ff0000;
+}
+.menu_e {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
+  gap: 1rem;
+  justify-items: center;
+  padding: 20px;
+}
+
+.card_ejercicio {
+  border: 3px solid #ff3b34;
+  width: 250px;
+  padding: 20px;
+  text-align: center;
+  background-color: #f4f4f4;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.card_ejercicio i {
+  font-size: 40px;
+  color: #c0392b;
+  margin-bottom: 10px;
+}
+
+.card_ejercicio:hover {
+  transform: translateY(-5px);
+}
+.desc_e {
+  color: #fff;
+  font-size: 25px;
+}
+
 .herr{
+  background-image: url(../assets/img/drum2.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   text-align: center;
   font-family: "Jura", sans-serif;
-  background-image: url(../assets/img/drum2.webp);
-  background-size: cover;
-  background-repeat: no-repeat;
-  color:#fff;
+  background-color: #471412;
+  margin: 0;
+  padding: 0;
 }
-footer{
-  background-color: #27241d;
+.herr h2{
+  padding-top: 20px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 45px;
+  text-shadow:
+    -1px -1px 0 #ff0000,
+     1px -1px 0 #ff0000,
+    -1px  1px 0 #ff0000,
+     1px  1px 0 #ff0000;
 }
+.menu_h {
+  display: grid; 
+  grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
+  gap: 1rem;
+  justify-items: center;
+  padding: 20px;
+}
+
+.card_herramienta {
+  border: 3px solid #ff3b34;
+  width: 250px;
+  padding: 20px;
+  text-align: center;
+  background-color: #f4f4f4;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.card_herramienta i {
+  font-size: 40px;
+  color: #c0392b;
+  margin-bottom: 10px;
+}
+
+.card_herramienta:hover {
+  transform: translateY(-5px);
+}
+.desc_h {
+  color: #fff;
+  font-size: 25px;
+}
+footer {
+  background-color: #434343;
+  color: #fff;
+  text-align: center;
+  padding: 30px 20px;
+  font-family: "Jura", sans-serif;
+}
+
+footer h3 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  text-shadow:
+    -1px -1px 0 #ff0000,
+     1px -1px 0 #ff0000,
+    -1px  1px 0 #ff0000,
+     1px  1px 0 #ff0000;
+}
+
+footer p {
+  margin: 5px 0;
+  font-size: 18px;
+}
+
+.redes-sociales a {
+  color: #fff;
+  margin: 0 10px;
+  font-size: 24px;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.redes-sociales a:hover {
+  color: #ff3b34;
+}
+
 
 @media (max-width: 1024px) {
   #heroCarousel {
@@ -248,5 +371,13 @@ footer{
     height: 100px;
     width: 100%;
     border-radius: 5px;
+  }
+  .card_ejercicio {
+    width: 220px;
+    padding: 10px;
+  }
+  .card_herramienta {
+    width: 220px;
+    padding: 10px;
   }
 }
