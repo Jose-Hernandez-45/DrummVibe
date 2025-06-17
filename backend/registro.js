@@ -1,58 +1,50 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const togglePassword = document.getElementById('togglePassword');
-    const passwordInput = document.getElementById('contrasena');
     const form = document.getElementById('registroForm');
+    const usuarioInput = document.getElementById('usuario');
+    const correoInput = document.getElementById('correo');
+    const contrasenaInput = document.getElementById('contrasena');
+    const togglePassword = document.getElementById('togglePassword');
     const message = document.getElementById('message');
 
-    if (togglePassword && passwordInput) {
-        togglePassword.addEventListener('click', () => {
-            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-            passwordInput.setAttribute('type', type);
+    // Alternar visibilidad de la contraseña
+    togglePassword?.addEventListener('click', () => {
+        const type = contrasenaInput.type === 'password' ? 'text' : 'password';
+        contrasenaInput.type = type;
+        togglePassword.classList.toggle('fa-eye');
+        togglePassword.classList.toggle('fa-eye-slash');
+    });
 
-            // Alterna las clases de FontAwesome para cambiar el icono
-            togglePassword.classList.toggle('fa-eye');
-            togglePassword.classList.toggle('fa-eye-slash');
-        });
-    }
+    // Enviar formulario
+    form?.addEventListener('submit', async (e) => {
+        e.preventDefault();
 
-    if (form) {
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
+        const usuario = usuarioInput.value.trim();
+        const correo = correoInput.value.trim();
+        const contrasena = contrasenaInput.value;
 
-            const usuario = document.getElementById('usuario').value.trim();
-            const correo = document.getElementById('correo').value.trim();
-            const contrasena = passwordInput.value;
+        if (!usuario || !correo || !contrasena) {
+            mostrarMensaje('Por favor, completa todos los campos.', false);
+            return;
+        }
 
-            if (!usuario || !correo || !contrasena) {
-                message.textContent = 'Por favor, completa todos los campos.';
-                message.style.color = '#da0700';
-                return;
-            }
+        try {
+            const res = await fetch('http://localhost:5000/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ usuario, correo, contrasena }),
+            });
 
-            try {
-                const res = await fetch('http://localhost:5000/register', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ usuario, correo, contrasena }),
-                });
+            const data = await res.json();
+            mostrarMensaje(data.message || data.error, res.ok);
 
-                const data = await res.json();
+            if (res.ok) form.reset();
+        } catch {
+            mostrarMensaje('Error en la conexión con el servidor', false);
+        }
+    });
 
-                if (!res.ok) {
-                    message.textContent = data.error || 'Error en el registro';
-                    message.style.color = '#da0700';
-                    return;
-                }
-
-                message.textContent = data.message;
-                message.style.color = '#49cc21';
-                form.reset();
-
-            } catch (error) {
-                message.textContent = 'Error en la conexión con el servidor';
-                message.style.color = '#da0700';
-                console.error(error);
-            }
-        });
+    function mostrarMensaje(texto, exito) {
+        message.textContent = texto;
+        message.style.color = exito ? '#49cc21' : '#da0700';
     }
 });

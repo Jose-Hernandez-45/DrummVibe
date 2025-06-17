@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// Loader en index
+// Loader function
 window.addEventListener("load", () => {
   console.log("Página cargada, ocultando loader...");
   const loader = document.getElementById("loader");
