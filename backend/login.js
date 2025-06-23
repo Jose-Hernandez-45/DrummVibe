@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Guardar datos en localStorage
       localStorage.setItem('usuario', data.usuario || usuario);
-      localStorage.setItem('rol', data.rol || '');
+      localStorage.setItem('rol', data.rol || 'usuario');
 
       message.textContent = data.message;
       message.style.color = 'green';
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Redirigir por rol
       setTimeout(() => {
         if (data.rol === 'administrador') {
-          window.location.href = '../templates/admin.html';
+          window.location.href = '../templates/adm/admin.html';
         } else {
           window.location.href = '../index.html';
         }

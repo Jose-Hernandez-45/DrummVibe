@@ -95,6 +95,22 @@ header {
   cursor: pointer;
 }
 
+.menu_h {
+  display: grid; 
+  grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
+  gap: 1rem;
+  justify-items: center;
+  padding: 20px;
+}
+
+.menu_e {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
+  gap: 1rem;
+  justify-items: center;
+  padding: 20px;
+}
+
 #heroCarousel {
   background-color: #555;
   overflow: hidden;
@@ -177,13 +193,6 @@ header {
     -1px  1px 0 #ff0000,
      1px  1px 0 #ff0000;
 }
-.menu_e {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
-  gap: 1rem;
-  justify-items: center;
-  padding: 20px;
-}
 
 .card_ejercicio {
   border: 3px solid #ff3b34;
@@ -232,13 +241,6 @@ header {
      1px -1px 0 #ff0000,
     -1px  1px 0 #ff0000,
      1px  1px 0 #ff0000;
-}
-.menu_h {
-  display: grid; 
-  grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
-  gap: 1rem;
-  justify-items: center;
-  padding: 20px;
 }
 
 .card_herramienta {
@@ -330,16 +332,6 @@ footer p {
     transition: max-height 0.7s ease;
     z-index: 9999;
   }
-  .title_h {
-    font-family: "Jura", sans-serif;
-    font-weight: 1000;
-    font-size: 1.3rem;
-  }
-  #heroCarousel {
-    margin-top: 90px;
-    height: calc(100vh - 90px);
-    height: 300px;
-  }
   .menu.show {
     max-height: 500px;
   }
@@ -357,6 +349,16 @@ footer p {
     color: #fff;
     cursor: pointer;
   }
+  .title_h {
+    font-family: "Jura", sans-serif;
+    font-weight: 1000;
+    font-size: 1.3rem;
+  }
+  #heroCarousel {
+    margin-top: 90px;
+    height: calc(100vh - 90px);
+    height: 300px;
+  }
   .guia{
     height: 100px;
     width: 100%;
@@ -373,11 +375,19 @@ footer p {
     border-radius: 5px;
   }
   .card_ejercicio {
-    width: 220px;
-    padding: 10px;
+    width: 160px;
+    padding: 2px;
+  }
+  .card_ejercicio h3{
+    font-weight: 10px;
+    font-size:larger;
   }
   .card_herramienta {
-    width: 220px;
-    padding: 10px;
+    width: 160px;
+    padding: 2px;
+  }
+  .card_herramienta h3{
+    font-weight: 10px;
+    font-size:larger;
   }
 }

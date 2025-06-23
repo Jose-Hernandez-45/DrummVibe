@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Si es administrador, insertar Panel Admin después del Panel
       if (rol === 'administrador') {
         const panelAdminLink = document.createElement('a');
-        panelAdminLink.href = '../templates/admin.html';
+        panelAdminLink.href = '../templates/adm/admin.html';
         panelAdminLink.textContent = 'Panel Admin';
         panelAdminLink.style.cursor = 'pointer';
         panelAdminLink.style.display = 'block';
@@ -71,7 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
     } else {
-      console.warn('No se encontró el enlace Ejercicios');
     }
 
     if (herramientasLink) {
@@ -83,4 +82,5 @@ document.addEventListener('DOMContentLoaded', () => {
       loginLink.remove();
     }
   }
+
 });
