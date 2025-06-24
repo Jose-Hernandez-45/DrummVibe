@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// Loader function
+// Mostrar animación de salida del loader al cargar la página
 window.addEventListener("load", () => {
   const loader = document.getElementById("loader");
   if (loader) {
@@ -21,6 +21,6 @@ window.addEventListener("load", () => {
     setTimeout(() => {
       loader.style.display = "none";
     }, 500);
-  } else {
+    console.log("Este codigo es de Hernández Galindo José Miguel");
   }
 });
