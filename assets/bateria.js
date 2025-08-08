@@ -1,7 +1,7 @@
 // Cargar sonidos de batería
 const sounds = {
-  kick: new Howl({ src: ['/drums/kicks/kick.wav'] }),
-  snare: new Howl({ src: ['/drums/Snares/snare.wav'] }),
+  kick: new Howl({ src: ['/drums/kick/kick.wav'] }),
+  snare: new Howl({ src: ['/drums/Snares/snare.wav']}),
   hihat: new Howl({ src: ['/drums/Hats/hat.wav'] }),
   tom: new Howl({ src: ['/drums/Toms/tom_f.wav'] }),
   ride: new Howl({ src: ['/drums/Rides/ride.wav'] }),
